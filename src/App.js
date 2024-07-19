@@ -89,7 +89,14 @@ const Map = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw', position: 'relative' }}>
             <div style={{ position: 'relative', width: '80%', height: '80%' }}>
-                <MapContainer center={[26.25955, -80.0828]} zoom={16} style={{ height: '100%', width: '100%' }}>
+                <MapContainer 
+                    center={[26.25955, -80.0828]} 
+                    zoom={16} 
+                    style={{ height: '100%', width: '100%' }}
+                    maxZoom={18}
+                    minZoom={16}
+                    dragging={false} // Disable dragging
+                >
                     <TileLayer
                         url={basemap === 'satellite' ? `${esriBasemapUrl}/tile/{z}/{y}/{x}` : osmBasemapUrl}
                     />
